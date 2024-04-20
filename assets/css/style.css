@@ -1,0 +1,72 @@
+/* Google fonts import to go here if required*/
+
+/* Wildcard selector to remove default styles */
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin:0;
+    padding:0;
+  }
+
+  header, main, footer {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .container {
+    display: flex;
+    /* Makes flex elements place vertically */
+    flex-direction: column;
+    /* Forces content to take up all vertical height of screen */
+    height: 100vh;
+  }
+
+  header {
+    /* flex-grow: (grow to fit container) 0 (none),
+       flex-shrink: (shrink to prevent overflow) 1,
+       flex-basis: (initial size) 50px */
+    flex: 0 1 50px;
+    background-color: cornflowerblue;
+  }
+
+  main {
+    /* flex-grow: 1 (priority over header and footer),
+       flex-shrink: (shrink to prevent overflow) 1,
+       flex-basis: auto makes initial size fit content */
+    flex: 1 1 auto;
+    background-color: cornsilk;
+  }
+
+  footer {
+    /* flex as header */
+    flex: 0 1 50px;
+    background-color: coral;
+  }
+
+  .quiz-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    background-color: blueviolet;
+    margin: 0 auto;
+  }
+
+  #option-btns-container, #answer-container, #action-btns-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .option-btn, .action-btn {
+    margin: 1em;
+
+  }
+
+  .hidden {
+    display: none;
+  }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <meta name="description" content="Test your knowledge of English idioms">
+    <title>English Idioms Quiz</title>
+    <!--link to stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="heading-1">English Idioms Quiz</h1>
+            <h2 class="heading-2">Test your knowledge of English idioms!</h2>
+        </header>
+        <main>
+            <section class="quiz-container">
+                <h3 id="instruction">Choose the correct meaning of the idiom given</h3>
+                <h4 id="idiom">Idiom</h4>
+                <div id="option-btns-container">
+                    <button class="option-btn" id="option-btn-a">a</button>
+                    <button class="option-btn" id="option-btn-b">b</button>
+                    <button class="option-btn" id="option-btn-c">c</button>
+                </div>
+                <div id="answer-container">
+                    <p id="right-or-wrong"></p>
+                    <p id="score">Your score is: <span id="scoreElement">0</span> out of 10</p>
+                </div>
+                <div id="action-btns-container">
+                    <!--button for next idiom or new quiz here-->
+                    <button class="action-btn" id="next-btn">Next idiom!</button>
+                    <button class="action-btn hidden" id="new-quiz-btn">Start new quiz</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Quiz created by <a href="https://github.com/tori-coder" target="_blank">Victoria Carey</a> for Code Institute Project 2 - Javascript Essentials</p>
+        </footer>
+    </div>
+    <!--link to javascript-->
+    <script src="assets/js/idioms.js"></script>
+    <script src="assets/js/script.js"></script> 
+</body>
+</html>
