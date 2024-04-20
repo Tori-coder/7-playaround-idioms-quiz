@@ -1,18 +1,10 @@
 // define idiomsArray
-const idiomsArray = [
-    {
-        idiom: "idiom0",
-        meanings: ["meaninga0", "meaningb0", "meaningc0"],
-        answer: "meaninga0"
-    },
-    {
-        idiom: "idiom1",
-        meanings: ["meaninga1", "meaningb1", "meaningc1"],
-        answer: "meaningb1"
-    },
-    {
-        idiom: "idiom2",
-        meanings: ["meaninga2", "meaningb2", "meaningc2"],
-        answer: "meaningc2"
-    }
-]
+const idiomsArray = []
+for (let i = 0; i < 25; i++) {
+    const idiomObject = {
+        idiom: `idiom${i}`,
+        meanings: [`meaning${i}a`, `meaning${i}b`, `meaning${i}c`],
+        answer: `meaning${i}a`
+    };  
+    idiomsArray.push(idiomObject);
+}
