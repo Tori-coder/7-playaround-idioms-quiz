@@ -1,10 +1,134 @@
 // define idiomsArray
-const idiomsArray = []
-for (let i = 0; i < 25; i++) {
-    const idiomObject = {
-        idiom: `idiom${i}`,
-        meanings: [`meaning${i}a`, `meaning${i}b`, `meaning${i}c`],
-        answer: `meaning${i}a`
-    };  
-    idiomsArray.push(idiomObject);
-}
+const idiomsArray = [
+    {
+      "idiom": "A piece of cake",
+      "meanings": ["Something very easy to do", "A delicious dessert"],
+      "answer": "Something very easy to do"
+    },
+    {
+      "idiom": "Bite the bullet",
+      "meanings": ["To endure a painful experience with courage", "To express anger"],
+      "answer": "To endure a painful experience with courage"
+    },
+    {
+      "idiom": "Cost an arm and a leg",
+      "meanings": ["To be very expensive", "To be free"],
+      "answer": "To be very expensive"
+    },
+    {
+      "idiom": "Hit the nail on the head",
+      "meanings": ["To do exactly the right thing", "To make a mistake"],
+      "answer": "To do exactly the right thing"
+    },
+    {
+      "idiom": "Jump on the bandwagon",
+      "meanings": ["To join a popular trend or activity", "To criticize others"],
+      "answer": "To join a popular trend or activity"
+    },
+    {
+      "idiom": "Bite off more than you can chew",
+      "meanings": ["To take on a task that is way too big", "To eat too quickly"],
+      "answer": "To take on a task that is way too big"
+    },
+    {
+      "idiom": "Break the ice",
+      "meanings": ["To start a conversation in a social situation", "To cause trouble"],
+      "answer": "To start a conversation in a social situation"
+    },
+    {
+      "idiom": "Burn the midnight oil",
+      "meanings": ["To work late into the night", "To relax in the evening"],
+      "answer": "To work late into the night"
+    },
+    {
+      "idiom": "Cut to the chase",
+      "meanings": ["To get to the main point without wasting time", "To end a relationship"],
+      "answer": "To get to the main point without wasting time"
+    },
+    {
+      "idiom": "Don't cry over spilled milk",
+      "meanings": ["Don't worry about things that have already happened", "Cry for help"],
+      "answer": "Don't worry about things that have already happened"
+    },
+    {
+      "idiom": "Drive someone up the wall",
+      "meanings": ["To annoy someone greatly", "To make someone happy"],
+      "answer": "To annoy someone greatly"
+    },
+    {
+      "idiom": "Hit the sack",
+      "meanings": ["To go to bed", "To hit someone with a sack"],
+      "answer": "To go to bed"
+    },
+    {
+      "idiom": "Let the cat out of the bag",
+      "meanings": ["To reveal a secret", "To buy a cat"],
+      "answer": "To reveal a secret"
+    },
+    {
+      "idiom": "Miss the boat",
+      "meanings": ["To miss an opportunity", "To go on a cruise"],
+      "answer": "To miss an opportunity"
+    },
+    {
+      "idiom": "Piece of cake",
+      "meanings": ["Something very easy to do", "A delicious dessert"],
+      "answer": "Something very easy to do"
+    },
+    {
+      "idiom": "The ball is in your court",
+      "meanings": ["It's your turn to make a decision", "The ball is lost"],
+      "answer": "It's your turn to make a decision"
+    },
+    {
+      "idiom": "Under the weather",
+      "meanings": ["Feeling ill or sick", "Feeling happy"],
+      "answer": "Feeling ill or sick"
+    },
+    {
+      "idiom": "Break a leg",
+      "meanings": ["Good luck", "Get well soon"],
+      "answer": "Good luck"
+    },
+    {
+      "idiom": "Cost an arm and a leg",
+      "meanings": ["To be very expensive", "To be free"],
+      "answer": "To be very expensive"
+    },
+    {
+      "idiom": "Jump the gun",
+      "meanings": ["To start something too soon", "To win a race"],
+      "answer": "To start something too soon"
+    },
+    {
+      "idiom": "Kick the bucket",
+      "meanings": ["To die", "To play soccer"],
+      "answer": "To die"
+    },
+    {
+      "idiom": "Once in a blue moon",
+      "meanings": ["Very rarely", "Every day"],
+      "answer": "Very rarely"
+    },
+    {
+      "idiom": "Pull someone's leg",
+      "meanings": ["To joke with someone", "To push someone"],
+      "answer": "To joke with someone"
+    },
+    {
+      "idiom": "Spill the beans",
+      "meanings": ["To reveal a secret", "To clean up a mess"],
+      "answer": "To reveal a secret"
+    },
+    {
+      "idiom": "Time flies",
+      "meanings": ["Time passes quickly", "Time is frozen"],
+      "answer": "Time passes quickly"
+    },
+    {
+      "idiom": "Hit the nail on the head",
+      "meanings": ["To do exactly the right thing", "To make a mistake"],
+      "answer": "To do exactly the right thing"
+    }
+  ]
+  
