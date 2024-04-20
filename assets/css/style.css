@@ -5,14 +5,60 @@
     box-sizing: border-box;
   }
 
+  /* define fonts */
+@font-face {
+  font-family: cupcake;
+  src: url(../fonts/Cupcake.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TheArtistSans;
+  src: url(../fonts/TheArtistSans.otf);
+  font-display: swap;
+}
+
   body {
     margin:0;
     padding:0;
+    background-image: url("../images/question_marks_background_22.jpg");
   }
 
   header, main, footer {
     text-align: center;
     padding: 10px;
+  }
+
+/* Heading styles */
+.heading-1 {
+  margin: 0.5em 0 0 0;
+  padding: 0;
+  font-family: cupcake;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+}
+
+.heading-2 {
+  margin: 0.5em;
+  padding: 0;
+  font-family: TheArtistSans;
+  font-size: 2.2em;
+  letter-spacing: 0.2em;
+}
+
+  h3 {
+    margin: 8px 15px;
+    font-family: TheArtistSans;
+    font-size: 1.7em;
+    letter-spacing: 0.2em;
+  }
+
+  h4 {
+    font-family: TheArtistSans;
+    font-size: 1.9em;
+  letter-spacing: 0.2em;
+  padding: 0;
+  margin: 0.5em 0;
   }
 
   .container {
@@ -28,21 +74,23 @@
        flex-shrink: (shrink to prevent overflow) 1,
        flex-basis: (initial size) 50px */
     flex: 0 1 50px;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue;*/
   }
 
   main {
+    margin:0;
+    padding:0;
     /* flex-grow: 1 (priority over header and footer),
        flex-shrink: (shrink to prevent overflow) 1,
        flex-basis: auto makes initial size fit content */
     flex: 1 1 auto;
-    background-color: cornsilk;
+    /*background-color: cornsilk;]/
   }
 
   footer {
     /* flex as header */
     flex: 0 1 50px;
-    background-color: coral;
+    /*background-color: coral;*/
   }
 
   .quiz-container {
@@ -51,15 +99,25 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 70%;
-    background-color: blueviolet;
+    width: 60%;
+    background-color: rgb(141,102,222, 0.7);
     margin: 0 auto;
+  }
+
+  #answer-container p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 
   #option-btns-container, #answer-container, #action-btns-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+  }
+
+  #action-btns-container {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 
   #right-or-wrong {
@@ -75,6 +133,37 @@
     display: none;
   }
 
-  button:disabled {
-    /*put styling here to match the non-disabled buttons*/
-  }
+
+/* Quiz option button styles */
+.option-btn {
+    font-size: 0.9em;
+    padding: 8px 15px;
+    border: 3px;
+    border-style: groove;
+    border-radius: 10px;
+    margin: 6px 0;
+    max-width: 490px;
+}
+
+
+button:disabled {
+    font-size: 0.9em;
+    padding: 8px 15px;
+    border: 3px;
+    border-style: groove;
+    border-radius: 10px;
+    margin: 8px 0;
+    color: buttontext;
+    background-color: buttonface;
+}
+
+.action-btn {
+  font-size: 0.8em;
+    border: 3px;
+    border-style: groove;
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin-top: 1em;
+    color: buttontext;
+    background-color: buttonface;
+}
