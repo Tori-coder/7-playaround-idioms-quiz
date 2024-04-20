@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function() {
           rightWrongElement.innerHTML = "You got it wrong!";
           scoreElement.innerText = `Your score is: ${score} out of 10`;
         }
+        optionButtonA.disabled = true;
+        optionButtonB.disabled = true;
+        optionButtonC.disabled = true;
     }
     
     function endOfQuiz() {
@@ -64,6 +67,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function displayNextIdiom() {
+      //reenable option btns
+        optionButtonA.disabled = false;
+        optionButtonB.disabled = false;
+        optionButtonC.disabled = false;
       // Clear the inner HTML content of "right-or-wrong" element
       document.getElementById("right-or-wrong").innerHTML = "";
       //increase the question index
