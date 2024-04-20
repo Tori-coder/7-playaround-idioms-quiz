@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const optionButtonA = document.getElementById("option-btn-a");
     const optionButtonB = document.getElementById("option-btn-b");
     const optionButtonC = document.getElementById("option-btn-c");
+    const rightWrongElement = document.getElementById("right-or-wrong");
+    const scoreElement = document.getElementById("score");
     
     // Define click handler function for each option button
     function optionAClickHandler() {
@@ -35,9 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }    
         
     function checkAnswer(selectedAnswer) {
-        const rightWrongElement = document.getElementById("right-or-wrong");
-        const scoreElement = document.getElementById("score");
-    
         if (idiomsArray[currentIdiomIndex].answer === selectedAnswer) {
           rightWrongElement.innerHTML = "You got it right!";
           score++;
@@ -51,10 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function endOfQuiz() {
       //Display end of quiz message
       document.getElementById("right-or-wrong").innerHTML = "That's the end of the quiz";
-      //hide new-quiz btn and show start new quiz button
+      //hide and disable new-quiz btn 
       document.getElementById("next-btn").classList.add("hidden");
+      document.getElementById("next-btn").disabled = true;
+      // show start new quiz button and add event listener
       document.getElementById("new-quiz-btn").classList.remove("hidden");
-      // add event listener to start new quiz button
+      document.getElementById("new-quiz-btn").disabled = false;
       document.getElementById("new-quiz-btn").addEventListener("click", startNewQuiz);
       // Remove existing event listeners from option buttons
       optionButtonA.removeEventListener("click", optionAClickHandler);
@@ -82,17 +83,17 @@ document.addEventListener("DOMContentLoaded", function() {
       // Reset quiz variables
       currentQuestionIndex = 0;
       score = 0;
+      console.log("hi");
       // Remove end of quiz message
       document.getElementById("right-or-wrong").innerHTML = "";
       // Reset displayed score
       scoreElement.innerText = `Your score is: ${score} out of 10`;
-      // Show next idiom button and hide start-new-quiz button
+      // Show and enable next idiom button and hide and 
       document.getElementById("next-btn").classList.remove("hidden");
+      document.getElementById("next-btn").disabled = false;
+      //hide and disable start-new-quiz button
       document.getElementById("new-quiz-btn").classList.add("hidden");
-      // Remove event listener from start new quiz button
-      document.getElementById("new-quiz-btn").removeEventListener("click", startNewQuiz);
-      // Remove event listener from next idiom button
-      document.getElementById("next-btn").removeEventListener("click", displayNextIdiom);
+      document.getElementById("new-quiz-btn").disabled = true;
       // Add event listener to next idiom button
       document.getElementById("next-btn").addEventListener("click", displayNextIdiom);
       // Restart the quiz
