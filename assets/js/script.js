@@ -4,10 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
     //generate a random number to choose the current idiom from the array
     let currentIdiomIndex = Math.floor(Math.random() * idiomsArray.length);
 
+    //start question count at 0
     let currentQuestionIndex = 0;
     let score = 0;
 
-    // set quiz variables with reference to HTML
+    // define quiz variables
     const idiomElement = document.getElementById("idiom");
     const optionButtonA = document.getElementById("option-btn-a");
     const optionButtonB = document.getElementById("option-btn-b");
@@ -25,17 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
       function optionCClickHandler() {
       checkAnswer(idiomsArray[currentIdiomIndex].meanings[2]);
     }
-    
-    // display current idiom
-    function displayCurrentIdiom() {
-        //display current idiom from idiomsArray
-        idiomElement.innerHTML = idiomsArray[currentIdiomIndex].idiom;
-        //display meanings options
-        optionButtonA.innerHTML = idiomsArray[currentIdiomIndex].meanings[0];
-        optionButtonB.innerHTML = idiomsArray[currentIdiomIndex].meanings[1];
-        optionButtonC.innerHTML = idiomsArray[currentIdiomIndex].meanings[2];
-    }    
-        
+       
     function checkAnswer(selectedAnswer) {
         if (idiomsArray[currentIdiomIndex].answer === selectedAnswer) {
           rightWrongElement.innerHTML = "You got it right!";
@@ -51,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function endOfQuiz() {
-      //Display end of quiz message
+      // Display end of quiz message
       document.getElementById("right-or-wrong").innerHTML = "That's the end of the quiz";
-      //hide and disable new-quiz btn 
+      // Hide and disable next btn 
       document.getElementById("next-btn").classList.add("hidden");
       document.getElementById("next-btn").disabled = true;
-      // show start new quiz button and add event listener
+      // Show start-new-quiz button and add event listener
       document.getElementById("new-quiz-btn").classList.remove("hidden");
       document.getElementById("new-quiz-btn").disabled = false;
       document.getElementById("new-quiz-btn").addEventListener("click", startNewQuiz);
@@ -65,27 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
       optionButtonB.removeEventListener("click", optionBClickHandler);
       optionButtonC.removeEventListener("click", optionCClickHandler);
     }
-    
-    function displayNextIdiom() {
-      //reenable option btns
-        optionButtonA.disabled = false;
-        optionButtonB.disabled = false;
-        optionButtonC.disabled = false;
-      // Clear the inner HTML content of "right-or-wrong" element
-      document.getElementById("right-or-wrong").innerHTML = "";
-      //increase the question index
-      currentQuestionIndex++;
-      //check to see if 5 questions have been asked, and if so, run endOfQuiz
-      if (currentQuestionIndex===5) {
-          endOfQuiz();
-      } else {
-      //generate a new random number to choose the current idiom from the array
-      currentIdiomIndex = Math.floor(Math.random() * idiomsArray.length);
-      //display the new idiom
-      displayCurrentIdiom();
-      }
-    }
-    
+       
     function startNewQuiz() {
       // Reset quiz variables
       currentQuestionIndex = 0;
@@ -98,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Show and enable next idiom button and hide and 
       document.getElementById("next-btn").classList.remove("hidden");
       document.getElementById("next-btn").disabled = false;
-      //hide and disable start-new-quiz button
+      // Hide and disable start-new-quiz button
       document.getElementById("new-quiz-btn").classList.add("hidden");
       document.getElementById("new-quiz-btn").disabled = true;
       // Add event listener to next idiom button
@@ -106,7 +77,37 @@ document.addEventListener("DOMContentLoaded", function() {
       // Restart the quiz
       runQuiz();
     }
-        
+    
+    
+    function displayCurrentIdiom() {
+        // Display current idiom from idiomsArray
+        idiomElement.innerHTML = idiomsArray[currentIdiomIndex].idiom;
+        // Display meanings options
+        optionButtonA.innerHTML = idiomsArray[currentIdiomIndex].meanings[0];
+        optionButtonB.innerHTML = idiomsArray[currentIdiomIndex].meanings[1];
+        optionButtonC.innerHTML = idiomsArray[currentIdiomIndex].meanings[2];
+    }
+    
+    function displayNextIdiom() {
+      // Re-enable option buttons
+        optionButtonA.disabled = false;
+        optionButtonB.disabled = false;
+        optionButtonC.disabled = false;
+      // Clear inner HTML content of "right-or-wrong" element
+      document.getElementById("right-or-wrong").innerHTML = "";
+      // Increase the question index
+      currentQuestionIndex++;
+      // Check to see if 5 questions have been asked, and if so, run endOfQuiz
+      if (currentQuestionIndex===5) {
+          endOfQuiz();
+      } else {
+      // Generate a new random number to choose the current idiom from the array
+      currentIdiomIndex = Math.floor(Math.random() * idiomsArray.length);
+      // Display the new idiom
+      displayCurrentIdiom();
+      }
+    } 
+    
     function runQuiz() {
       currentQuestionIndex = 0;
       displayCurrentIdiom();
@@ -122,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("next-btn").addEventListener("click", displayNextIdiom);
       displayNextIdiom();
     }
+    
     runQuiz()
         
     })
