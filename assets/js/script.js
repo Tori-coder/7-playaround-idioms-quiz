@@ -3,8 +3,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //generate a random number to choose the current idiom from the array
     let currentIdiomIndex = Math.floor(Math.random() * idiomsArray.length);
+
     let currentQuestionIndex = 0;
     let score = 0;
+
+    // set quiz variables with reference to HTML
+    const idiomElement = document.getElementById("idiom");
+    const optionButtonA = document.getElementById("option-btn-a");
+    const optionButtonB = document.getElementById("option-btn-b");
+    const optionButtonC = document.getElementById("option-btn-c");
     
     // Define click handler function for each option button
     function optionAClickHandler() {
@@ -19,11 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // display current idiom
     function displayCurrentIdiom() {
-        // set quiz variables with reference to HTML
-        const idiomElement = document.getElementById("idiom");
-        const optionButtonA = document.getElementById("option-btn-a");
-        const optionButtonB = document.getElementById("option-btn-b");
-        const optionButtonC = document.getElementById("option-btn-c");
         //display current idiom from idiomsArray
         idiomElement.innerHTML = idiomsArray[currentIdiomIndex].idiom;
         //display meanings options
@@ -55,9 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
       // add event listener to start new quiz button
       document.getElementById("new-quiz-btn").addEventListener("click", startNewQuiz);
       // Remove existing event listeners from option buttons
-      document.getElementById("option-btn-a").removeEventListener("click", optionAClickHandler);
-      document.getElementById("option-btn-b").removeEventListener("click", optionBClickHandler);
-      document.getElementById("option-btn-c").removeEventListener("click", optionCClickHandler);
+      optionButtonA.removeEventListener("click", optionAClickHandler);
+      optionButtonB.removeEventListener("click", optionBClickHandler);
+      optionButtonC.removeEventListener("click", optionCClickHandler);
     }
     
     function displayNextIdiom() {
@@ -98,16 +100,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
         
     function runQuiz() {
-      let currentQuestionIndex = 0;
+      currentQuestionIndex = 0;
       displayCurrentIdiom();
       // Remove existing event listeners from option buttons
-      document.getElementById("option-btn-a").removeEventListener("click", optionAClickHandler);
-      document.getElementById("option-btn-b").removeEventListener("click", optionBClickHandler);
-      document.getElementById("option-btn-c").removeEventListener("click", optionCClickHandler);
+      optionButtonA.removeEventListener("click", optionAClickHandler);
+      optionButtonB.removeEventListener("click", optionBClickHandler);
+      optionButtonC.removeEventListener("click", optionCClickHandler);
       // Add event listeners to option buttons
-      document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
-      document.getElementById("option-btn-b").addEventListener("click", optionBClickHandler);
-      document.getElementById("option-btn-c").addEventListener("click", optionCClickHandler);
+      optionButtonA.addEventListener("click", optionAClickHandler);
+      optionButtonB.addEventListener("click", optionBClickHandler);
+      optionButtonC.addEventListener("click", optionCClickHandler);
       // Add event listener to next button
       document.getElementById("next-btn").addEventListener("click", displayNextIdiom);
       displayNextIdiom();
